@@ -33,7 +33,7 @@ public class Pixel extends JPanel implements Runnable {
             try {
                 Thread.sleep(50);
                 int newColor = color -(((int) (Math.random() * 10)) -4);
-                this.color =  newColor > 0 && newColor < 254 ? newColor : color;
+                this.color =  newColor > 0 && newColor < 255 ? newColor : color;
                 this.setBackground(new Color(color, color, color));
             } catch(InterruptedException e) {
                 break;
