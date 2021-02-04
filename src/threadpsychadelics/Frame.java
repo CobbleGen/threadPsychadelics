@@ -5,6 +5,8 @@
  */
 package threadpsychadelics;
 
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 
@@ -16,9 +18,16 @@ public class Frame extends JFrame{
     ArrayList<Pixel> pixels = new ArrayList<>();
     
     public Frame() {
-        for (int i = 0; i < 400; i++) {
+        this.setLayout(new GridLayout(50, 50));
+        this.setVisible(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setPreferredSize(new Dimension(1000, 1000));
+        this.pack();
+        for (int i = 0; i < 2500; i++) {
             Pixel pixel = new Pixel();
             pixels.add(pixel);
+            this.add(pixel);
+            pixel.getT().start();
         }
     }
 }
