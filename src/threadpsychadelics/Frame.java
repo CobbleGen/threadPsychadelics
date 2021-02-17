@@ -16,14 +16,16 @@ import javax.swing.JFrame;
  */
 public class Frame extends JFrame{
     ArrayList<Pixel> pixels = new ArrayList<>();
+    int hojdx = 50;
+    int langdy = 50;
     
     public Frame() {
-        this.setLayout(new GridLayout(50, 50));
+        this.setLayout(new GridLayout(hojdx, langdy));
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(1000, 1000));
         this.pack();
-        for (int i = 0; i < 2500; i++) {
+        for (int i = 0; i < hojdx*langdy; i++) {
             Pixel pixel = new Pixel();
             pixels.add(pixel);
             this.add(pixel);

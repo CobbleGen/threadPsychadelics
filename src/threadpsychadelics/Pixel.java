@@ -29,11 +29,11 @@ public class Pixel extends JPanel implements Runnable {
 
     @Override
     public void run() {
-        while(!Thread.interrupted() && !(color <= 0)) {
+        while(!Thread.interrupted() && !(color >= 255)) {
             try {
                 Thread.sleep(50);
-                int newColor = color -(((int) (Math.random() * 10)) -4);
-                this.color =  newColor > 0 && newColor < 255 ? newColor : color;
+                int newColor = color -(((int) (Math.random() * 10)) -2);
+                this.color =  newColor > 0 && newColor < 255 ? newColor : 0;
                 this.setBackground(new Color(color, color, color));
             } catch(InterruptedException e) {
                 break;
